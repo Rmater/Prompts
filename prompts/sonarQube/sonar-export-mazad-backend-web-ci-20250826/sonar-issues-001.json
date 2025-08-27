@@ -1,0 +1,939 @@
+﻿[
+    {
+        "id":  "MAJOR_002",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  67,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": false,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "ROLLBACK: Cannot fix - GetAllAsync() returns Task<IQueryable<T>> which cannot be chained with LINQ methods",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_003",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Change this condition so that it does not always evaluate to \u0027True\u0027.",
+        "rule":  "csharpsquid:S2589",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/AuctionAuditLog/AuctionAuditLogAppService.cs",
+        "line":  209,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "cwe",
+                     "suspicious",
+                     "redundant"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_004",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "\u0027System.Exception\u0027 should not be thrown by user code.",
+        "rule":  "csharpsquid:S112",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/AuctionCustomeAppService.cs",
+        "line":  2757,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "cwe",
+                     "error-handling"
+                 ],
+        "effort":  "20min"
+    },
+    {
+        "id":  "MAJOR_005",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetCurrentUserAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  74,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced GetCurrentUser() with await GetCurrentUserAsync()",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_006",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await ToListAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  82,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced filteredCauses.ToList() with await filteredCauses.ToListAsync()",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_007",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await CountAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  108,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced query.Count() with await query.CountAsync()",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_008",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await ToListAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  110,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+                "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced query.ToList() with await query.ToListAsync()",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_009",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  250,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": false,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Rolled back: GetAllAsync() returns Task<IQueryable<T>> which cannot be chained with LINQ methods",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_010",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  259,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": false,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Rolled back: GetAllAsync() returns Task<IQueryable<T>> which cannot be chained with LINQ methods",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_011",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllIncludingAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  325,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": false,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Rolled back: GetAllIncludingAsync() returns Task<IQueryable<T>> which cannot be chained with LINQ methods",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_012",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  210,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": false,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Rolled back: GetAllAsync() returns Task<IQueryable<T>> which cannot be chained with LINQ methods",
+        "batchNumber": 1,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_013",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetCurrentUserAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  217,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced GetCurrentUser() with await GetCurrentUserAsync()",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_014",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  221,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced _lookupSectionRepository.GetAll() with (await _lookupSectionRepository.GetAllAsync())",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_015",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetCurrentUserAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  255,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Already fixed: GetCurrentUser() was already await GetCurrentUserAsync()",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_016",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await CountAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  344,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced _causeRepository.Count() with await _causeRepository.CountAsync()",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_017",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await CountAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  364,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced _causeRepository.Count() with await _causeRepository.CountAsync()",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_018",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllIncludingAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  494,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Already fixed: GetAllIncluding() was already await GetAllIncludingAsync()",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_019",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllIncludingAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Admin/CausesAppService.cs",
+        "line":  498,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Already fixed: GetAllIncluding() was already await GetAllIncludingAsync()",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_020",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "The using directive for \u0027Thiqah.Mazad.BusinessContexts.Shared.Helpers\u0027 appeared previously in this namespace",
+        "rule":  "external_roslyn:CS0105",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/WalletContext/Bills/BillAppService.cs",
+        "line":  12,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-23",
+        "tags":  [
+
+                 ],
+        "effort":  "0min"
+    },
+    {
+        "id":  "MAJOR_021",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await ToListAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/AspZeroFeatures/Authorization/Users/Web/UserAppService.cs",
+        "line":  201,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-13",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": false,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Rolled back: ToListAsync() cannot be called on IEnumerable<User>, only on IQueryable<User>",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_022",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await ToListAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/AspZeroFeatures/Authorization/Users/Web/UserAppService.cs",
+        "line":  245,
+        "assignee":  "Unassigned",
+        "created":  "2025-08-13",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": false,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Rolled back: ToListAsync() cannot be called on IEnumerable<User>, only on IQueryable<User>",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_023",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Remove this unnecessary check for null.",
+        "rule":  "csharpsquid:S2589",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/AuctionCustomeAppService.cs",
+        "line":  3804,
+        "assignee":  "reem-matar59582",
+        "created":  "2025-01-01",
+        "tags":  [
+                     "cwe",
+                     "suspicious",
+                     "redundant"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_024",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/AuctionSession/AuctionSessionsAppService.cs",
+        "line":  446,
+        "assignee":  "reem-matar59582",
+        "created":  "2024-12-31",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_025",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/AuctionCustomeAppService.cs",
+        "line":  189,
+        "assignee":  "mahmoud-ali9092",
+        "created":  "2024-11-20",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixedAt": "2025-08-27T00:00:00Z",
+        "fixDescription": "Fixed: Replaced _assetRepository.GetAll() with (await _assetRepository.GetAllAsync())",
+        "batchNumber": 2,
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_026",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Biddings/BaseAddBid.cs",
+        "line":  396,
+        "assignee":  "ola-rushdi7289",
+        "created":  "2024-11-10",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_027",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Biddings/BaseAddBid.cs",
+        "line":  410,
+        "assignee":  "ola-rushdi7289",
+        "created":  "2024-11-10",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_028",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Biddings/BaseAddBid.cs",
+        "line":  435,
+        "assignee":  "ola-rushdi7289",
+        "created":  "2024-11-10",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_029",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Avoid using \"DateTime.Now\" for benchmarking or timespan calculation operations.",
+        "rule":  "csharpsquid:S6561",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Biddings/BaseGetLastFiveBiddings.cs",
+        "line":  223,
+        "assignee":  "ola-rushdi7289",
+        "created":  "2024-11-10",
+        "tags":  [
+
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_030",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/AuctionCustomeAppService.cs",
+        "line":  1271,
+        "assignee":  "Unassigned",
+        "created":  "2024-11-07",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_031",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Provide the \"DateTimeKind\" when creating this object.",
+        "rule":  "csharpsquid:S6562",
+        "file":  "src/integration/Thiqah.Integration.Yakeen/Util.cs",
+        "line":  31,
+        "assignee":  "Unassigned",
+        "created":  "2024-11-07",
+        "tags":  [
+                     "localisation",
+                     "pitfall"
+                 ],
+        "effort":  "5min"
+    },
+    {
+        "id":  "MAJOR_032",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Provide the \"DateTimeKind\" when creating this object.",
+        "rule":  "csharpsquid:S6562",
+        "file":  "src/integration/Thiqah.Integration.Yakeen/Util.cs",
+        "line":  40,
+        "assignee":  "Unassigned",
+        "created":  "2024-11-07",
+        "tags":  [
+                     "localisation",
+                     "pitfall"
+                 ],
+        "effort":  "5min"
+    },
+    {
+        "id":  "MAJOR_033",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Remove this unnecessary check for null.",
+        "rule":  "csharpsquid:S2589",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/AuctionBrochureAppService.cs",
+        "line":  211,
+        "assignee":  "ola-rushdi7289",
+        "created":  "2024-05-06",
+        "tags":  [
+                     "cwe",
+                     "suspicious",
+                     "redundant"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_034",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetAllListAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/AuctionCustomeAppService.cs",
+        "line":  4501,
+        "assignee":  "mahmoud-ali9092",
+        "created":  "2024-04-30",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixDescription": "Added await to GetAllListAsync() with parentheses for LINQ chaining: (await _repository.GetAllListAsync())",
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_035",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/AuctionDetails/BaseAuctionDetails.cs",
+        "line":  475,
+        "assignee":  "ola-rushdi7289",
+        "created":  "2024-04-29",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_036",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Change this condition so that it does not always evaluate to \u0027True\u0027.",
+        "rule":  "csharpsquid:S2589",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Mobile/GetAllAuctionsMobileAppService.cs",
+        "line":  255,
+        "assignee":  "Unassigned",
+        "created":  "2024-03-13",
+        "tags":  [
+                     "cwe",
+                     "suspicious",
+                     "redundant"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_037",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Change this condition so that it does not always evaluate to \u0027True\u0027.",
+        "rule":  "csharpsquid:S2589",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Mobile/GetAllAuctionsMobileAppService.cs",
+        "line":  286,
+        "assignee":  "Unassigned",
+        "created":  "2024-03-13",
+        "tags":  [
+                     "cwe",
+                     "suspicious",
+                     "redundant"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_038",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/EventHandler/InfathCauseUpdatedHandler.cs",
+        "line":  73,
+        "assignee":  "Unassigned",
+        "created":  "2024-02-06",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_039",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/EventHandler/InfathCauseUpdatedHandler.cs",
+        "line":  74,
+        "assignee":  "Unassigned",
+        "created":  "2024-02-06",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_040",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Remove this unnecessary check for null.",
+        "rule":  "csharpsquid:S2589",
+        "file":  "src/Thiqah.Mazad.Application/AspZeroFeatures/NotificationGatway/NotificationMessageAppService.cs",
+        "line":  109,
+        "assignee":  "Unassigned",
+        "created":  "2023-12-18",
+        "tags":  [
+                     "cwe",
+                     "suspicious",
+                     "redundant"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_041",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await FirstOrDefaultAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/AuctionAggregate/Services/Admin/GetSalesAgentForCurrentUserService.cs",
+        "line":  130,
+        "assignee":  "Unassigned",
+        "created":  "2023-11-07",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixDescription": "Added await to FirstOrDefaultAsync(): await userSalesAgents.FirstOrDefaultAsync()",
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_042",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await GetCurrentUserAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/GetAuctionsHistoryAppService.cs",
+        "line":  142,
+        "assignee":  "Unassigned",
+        "created":  "2023-10-24",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixDescription": "Added await to GetCurrentUserAsync(): await _session.GetCurrentUserAsync()",
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_043",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/Jahez/JahezGetAuctionTimeLiftedAppService.cs",
+        "line":  67,
+        "assignee":  "Unassigned",
+        "created":  "2023-10-11",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_044",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Avoid using \"DateTime.Now\" for benchmarking or timespan calculation operations.",
+        "rule":  "csharpsquid:S6561",
+        "file":  "src/Thiqah.Mazad.Application/CustomDtoMapper.cs",
+        "line":  245,
+        "assignee":  "ahmed-khalifa3418",
+        "created":  "2023-10-03",
+        "tags":  [
+
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_045",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await AnyAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/Jahez/JahezAuctionSubscribtionAppService.cs",
+        "line":  221,
+        "assignee":  "Unassigned",
+        "created":  "2023-10-02",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixDescription": "Added await to AnyAsync(): await query.AnyAsync()",
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_046",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/GetAuctionsHistoryAppService.cs",
+        "line":  80,
+        "assignee":  "ahmed-khalifa3418",
+        "created":  "2023-09-07",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_047",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Use a format provider when parsing date and time.",
+        "rule":  "csharpsquid:S6580",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/Services/Admin/GetAuctionsHistoryAppService.cs",
+        "line":  125,
+        "assignee":  "ahmed-khalifa3418",
+        "created":  "2023-09-07",
+        "tags":  [
+                     "pitfall"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_048",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Await CompleteAsync instead.",
+        "rule":  "csharpsquid:S6966",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AuctionContext/AuctionAggregate/Services/Mobile/EnterMazadMobileAppService.cs",
+        "line":  157,
+        "assignee":  "Unassigned",
+        "created":  "2023-09-06",
+        "tags":  [
+                     "async-await"
+                 ],
+        "effort":  "5min",
+        "finished": true,
+        "fixed": true,
+        "fixDescription": "Added await to CompleteAsync(): await unitOfWork.CompleteAsync()",
+        "buildValidated": true
+    },
+    {
+        "id":  "MAJOR_049",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Change this condition so that it does not always evaluate to \u0027True\u0027.",
+        "rule":  "csharpsquid:S2589",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Web/GetCauseByIdAppService.cs",
+        "line":  77,
+        "assignee":  "ahmed-khalifa3418",
+        "created":  "2023-07-23",
+        "tags":  [
+                     "cwe",
+                     "suspicious",
+                     "redundant"
+                 ],
+        "effort":  "10min"
+    },
+    {
+        "id":  "MAJOR_050",
+        "severity":  "MAJOR",
+        "type":  "CODE_SMELL",
+        "status":  "OPEN",
+        "message":  "Change this condition so that it does not always evaluate to \u0027True\u0027.",
+        "rule":  "csharpsquid:S2589",
+        "file":  "src/Thiqah.Mazad.Application/BusinessContexts/AssetContext/CauseAggregate/Services/Web/GetCauseByIdAppService.cs",
+        "line":  94,
+        "assignee":  "ahmed-khalifa3418",
+        "created":  "2023-07-23",
+        "tags":  [
+                     "cwe",
+                     "suspicious",
+                     "redundant"
+                 ],
+        "effort":  "10min"
+    }
+]
