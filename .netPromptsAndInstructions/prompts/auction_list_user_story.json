@@ -1,0 +1,493 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-08-25T12:00:00",
+  "user_story": {
+    "id": "AUCTION-LIST-001",
+    "title_ar": "استعراض قائمة المزادات",
+    "context": {
+      "platforms_ar": [
+        "المنصة الإدارية للعملاء",
+        "منصة العملاء"
+      ],
+      "actors_ar": [
+        "وكيل البيع"
+      ]
+    },
+    "preconditions_ar": [
+      "توجد عين منشأة (بلا مزاد قائم او بانتظار الترسية)",
+      "يملك المستخدم صلاحية استعراض المزادات"
+    ],
+    "postconditions_ar": [
+      "يقوم النظام باستعراض كافة المزادات (سواءً كانت فردية أو ضمن مجموعة)"
+    ],
+    "main_flow_ar": [
+      "ينتقل المستخدم إلى صفحة \"إدارة المزادات\"",
+      "يقوم النظام باستعراض قائمة المزادات المنشأة من قبل الوكيل (نموذج-001)",
+      "يمكن للمستخدم استخدام نموذج معايير البحث والتصفية لتقليص النتائج (منقول من قصة \"البحث عن مزاد\")"
+    ],
+    "alternate_flows": [
+      {
+        "id": "ALT-1",
+        "description_ar": "لا يوجد توصيف إضافي في النص الأصلي لهذه القصة."
+      }
+    ],
+    "error_flows": [
+      {
+        "id": "ER-1",
+        "description_ar": "لم يُذكر في النص الأصلي."
+      }
+    ],
+    "business_rules": [
+      {
+        "id": "BR-1",
+        "description_ar": "يقوم النظام باستعراض حقول فارغة عند أي معلومة لم يقم المستخدم بملئها للمزادات في المسودة."
+      },
+      {
+        "id": "BR-2",
+        "description_ar": "يقوم النظام بترتيب المزادات حسب الحالة ثم حسب وقت الإنشاء/البدء/الانتهاء كما هو موضح.",
+        "sorting": {
+          "state_priority_order_ar": [
+            "مزادات جاري",
+            "مزادات قادم", 
+            "مزادات منتهي لم يتم الترسية",
+            "مزادات WaitingApproval",
+            "مزادات منتهي بالترسية"
+          ],
+          "state_code_order": [
+            2,
+            1,
+            4,
+            6,
+            3
+          ],
+          "intra_state_rules": {
+            "2": {
+              "key": "EndDateTime",
+              "direction": "ASC",
+              "description_ar": "من الأقرب انتهاءً للأبعد"
+            },
+            "1": {
+              "key": "StartDateTime", 
+              "direction": "ASC",
+              "description_ar": "من الأقرب ابتداءً للأبعد"
+            },
+            "4": {
+              "key": "EndDateTime",
+              "direction": "ASC",
+              "description_ar": "من الأقرب انتهاءً للأبعد"
+            },
+            "6": {
+              "key": "CreationTime",
+              "direction": "ASC",
+              "description_ar": "من الأقرب إنشاءً للأبعد"
+            },
+            "3": {
+              "key": "EndDateTime",
+              "direction": "ASC",
+              "description_ar": "من الأقرب انتهاءً للأبعد"
+            }
+          }
+        }
+      },
+      {
+        "id": "BR-3",
+        "description_ar": "يقوم النظام بفصل استعراض قائمة المزادات القادمة، النشطة، والمنتهية عن قائمة المزادات في المسودة (واجهة مستقلة نموذج-002).",
+        "ui_tabs_ar": [
+          "المزادات (قائمة عامة)",
+          "المسودات"
+        ]
+      }
+    ],
+    "domain_enums": {
+      "AuctionStatusEnum": {
+        "1": {
+          "name": "Upcoming",
+          "display_name": "قادم",
+          "short_name": "Upcoming"
+        },
+        "2": {
+          "name": "InProgress",
+          "display_name": "جاري",
+          "short_name": "InProgress"
+        },
+        "3": {
+          "name": "Settled",
+          "display_name": "منتهي بالترسية",
+          "short_name": "Settled"
+        },
+        "4": {
+          "name": "EndedWithoutSettling",
+          "display_name": "منتهي لم يتم الترسية",
+          "short_name": "EndedWithoutSettling"
+        },
+        "5": {
+          "name": "Cancelled",
+          "display_name": "Cancelled",
+          "short_name": "Cancelled"
+        },
+        "6": {
+          "name": "WaitingApproval",
+          "display_name": "WaitingApproval",
+          "short_name": "WaitingApproval"
+        }
+      },
+      "MazadTypesEnum": {
+        "1": {
+          "name": "Electronic",
+          "display_name": "الكترونى",
+          "short_name": "Electronic"
+        },
+        "2": {
+          "name": "ElectronicAttendance",
+          "display_name": "حضوري إلكتروني",
+          "short_name": "Attendance"
+        },
+        "3": {
+          "name": "SealedEnvelopes",
+          "display_name": "الاظرف المغلقة",
+          "short_name": "SealedEnvelopes"
+        }
+      },
+      "AssetTypeEnum": {
+        "1": {
+          "name": "Building",
+          "display_name": "مبنى",
+          "short_name": "Building"
+        },
+        "2": {
+          "name": "Vehicle",
+          "display_name": "مركبة",
+          "short_name": "Vehicle"
+        },
+        "3": {
+          "name": "Other",
+          "display_name": "أخرى",
+          "short_name": "Other"
+        }
+      }
+    },
+    "ui_models": {
+      "list_model": {
+        "id": "نموذج-001",
+        "title_ar": "نموذج قائمة المزادات",
+        "columns": [
+          {
+            "name_ar": "رقم المزاد",
+            "field": "ReferenceNumber",
+            "notes_ar": "الرقم التعريفي الخاص بالمزاد"
+          },
+          {
+            "name_ar": "اسم المزاد",
+            "field": "AssetName",
+            "notes_ar": "الاسم الوصفي للمزاد"
+          },
+          {
+            "name_ar": "التصنيف",
+            "field": "AssetTypeId",
+            "notes_ar": "تصنيف نوع الأصل (عقار، منقول، إلخ)"
+          },
+          {
+            "name_ar": "اسم المجموعة",
+            "field": "CauseName",
+            "notes_ar": "يترك فارغًا إن كان المزاد فردي"
+          },
+          {
+            "name_ar": "نوع المزاد",
+            "field": "MazadTypeId",
+            "notes_ar": "إلكتروني، هجين، أظرف مغلقة"
+          },
+          {
+            "name_ar": "حالة المزاد",
+            "field": "AuctionStatusId",
+            "notes_ar": "الحالة الحالية (مسودة، قادم، نشط، إلخ)"
+          },
+          {
+            "name_ar": "تاريخ البدء",
+            "field": "StartDateTime",
+            "notes_ar": "تاريخ ووقت البدء"
+          },
+          {
+            "name_ar": "تاريخ الانتهاء",
+            "field": "EndDateTime",
+            "notes_ar": "تاريخ ووقت الانتهاء (كليًا)"
+          },
+          {
+            "name_ar": "عدد المشتركين",
+            "field": "ParticipantCount",
+            "notes_ar": "0 إن لم يبدأ أو لا يوجد مشتركين"
+          },
+          {
+            "name_ar": "عدد المزايدات",
+            "field": "BidsCount",
+            "notes_ar": "0 إن لم يبدأ المزاد أو لا يوجد مزايدات"
+          }
+        ]
+      },
+      "draft_list_model": {
+        "id": "نموذج-002",
+        "title_ar": "نموذج قائمة المزادات في المسودة",
+        "columns": [
+          {
+            "name_ar": "رقم المزاد",
+            "field": "ReferenceNumber"
+          },
+          {
+            "name_ar": "اسم المزاد",
+            "field": "AssetName"
+          },
+          {
+            "name_ar": "التصنيف",
+            "field": "AssetTypeId"
+          },
+          {
+            "name_ar": "اسم المجموعة",
+            "field": "CauseName",
+            "notes_ar": "يترك فارغًا إن كان المزاد فردي"
+          },
+          {
+            "name_ar": "نوع المزاد",
+            "field": "MazadTypeId"
+          },
+          {
+            "name_ar": "تاريخ البدء",
+            "field": "StartDateTime"
+          },
+          {
+            "name_ar": "تاريخ الانتهاء",
+            "field": "EndDateTime"
+          }
+        ]
+      }
+    },
+    "filters": {
+      "integrated_from": "AUCTION-SEARCH-001",
+      "general_list_filters": {
+        "id": "نموذج-001 (بحث عام)",
+        "fields": [
+          {
+            "name_ar": "رقم المزاد",
+            "key": "ReferenceNumber",
+            "type": "text",
+            "editable": true,
+            "required": false,
+            "max_length": 15,
+            "allowed_pattern": "^[0-9-]{0,15}$",
+            "notes_ar": "أرقام و \"-\""
+          },
+          {
+            "name_ar": "اسم المزاد",
+            "key": "AssetName",
+            "type": "text",
+            "editable": true,
+            "required": false,
+            "max_length": 15,
+            "allowed_pattern": "^[\\u0600-\\u06FFA-Za-z0-9\\(\\)\\-\\_\\\\\\/]{0,15}$",
+            "notes_ar": "حروف عربية/إنجليزية وأرقام ورموز خاصة ()-_\\/"
+          },
+          {
+            "name_ar": "حالة المزاد",
+            "key": "AuctionStatusIds",
+            "type": "multiselect",
+            "editable": true,
+            "required": false,
+            "values_ar": [
+              "قادم",
+              "جاري",
+              "منتهي لم يتم الترسية",
+              "منتهي بالترسية",
+              "Cancelled"
+            ],
+            "value_codes": [
+              1,
+              2,
+              4,
+              3,
+              5
+            ]
+          },
+          {
+            "name_ar": "التصنيف الرئيسي",
+            "key": "AssetTypeIds",
+            "type": "multiselect",
+            "editable": true,
+            "required": false,
+            "values_ar": [
+              "مبنى",
+              "مركبة",
+              "أخرى"
+            ],
+            "value_codes": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "name_ar": "نوع المزاد",
+            "key": "MazadTypeIds",
+            "type": "multiselect",
+            "editable": true,
+            "required": false,
+            "values_ar": [
+              "الكترونى",
+              "حضوري إلكتروني",
+              "الاظرف المغلقة"
+            ],
+            "value_codes": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "draft_list_filters": {
+        "id": "نموذج-002 (بحث المسودات)",
+        "fields": [
+          {
+            "name_ar": "رقم المزاد",
+            "key": "ReferenceNumber",
+            "type": "text",
+            "editable": true,
+            "required": false,
+            "max_length": 15,
+            "allowed_pattern": "^[0-9-]{0,15}$",
+            "notes_ar": "أرقام و \"-\""
+          },
+          {
+            "name_ar": "اسم المزاد",
+            "key": "AssetName",
+            "type": "text",
+            "editable": true,
+            "required": false,
+            "max_length": 15,
+            "allowed_pattern": "^[\\u0600-\\u06FFA-Za-z0-9\\(\\)\\-\\_\\\\\\/]{0,15}$",
+            "notes_ar": "حروف عربية/إنجليزية وأرقام ورموز خاصة ()-_\\/"
+          },
+          {
+            "name_ar": "التصنيف الرئيسي",
+            "key": "AssetTypeIds",
+            "type": "multiselect",
+            "editable": true,
+            "required": false,
+            "values_ar": [
+              "مبنى",
+              "مركبة",
+              "أخرى"
+            ],
+            "value_codes": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "name_ar": "نوع المزاد",
+            "key": "MazadTypeIds",
+            "type": "multiselect",
+            "editable": true,
+            "required": false,
+            "values_ar": [
+              "الكترونى",
+              "حضوري إلكتروني",
+              "الاظرف المغلقة"
+            ],
+            "value_codes": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "group_asset_filters": {
+        "id": "نموذج-003 (بحث أصل داخل مجموعة)",
+        "applies_when_ar": "عند استعراض تفاصيل مجموعة والبحث داخل أصولها",
+        "fields": [
+          {
+            "name_ar": "رقم المزاد",
+            "key": "ReferenceNumber",
+            "type": "text",
+            "editable": true,
+            "required": false,
+            "max_length": 15,
+            "allowed_pattern": "^[0-9-]{0,15}$"
+          },
+          {
+            "name_ar": "اسم الأصل",
+            "key": "AssetName",
+            "type": "text",
+            "editable": true,
+            "required": false,
+            "max_length": 15,
+            "allowed_pattern": "^[\\u0600-\\u06FFA-Za-z0-9\\(\\)\\-\\_\\\\\\/]{0,15}$"
+          },
+          {
+            "name_ar": "حالة المزاد",
+            "key": "AuctionStatusIds",
+            "type": "multiselect",
+            "editable": true,
+            "required": false,
+            "values_ar": [
+              "قادم",
+              "جاري",
+              "منتهي لم يتم الترسية",
+              "منتهي بالترسية",
+              "Cancelled"
+            ],
+            "value_codes": [
+              1,
+              2,
+              4,
+              3,
+              5
+            ]
+          },
+          {
+            "name_ar": "نوع المزاد",
+            "key": "MazadTypeIds",
+            "type": "multiselect",
+            "editable": true,
+            "required": false,
+            "values_ar": [
+              "الكترونى",
+              "حضوري إلكتروني",
+              "الاظرف المغلقة"
+            ],
+            "value_codes": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    "acceptance_criteria": [
+      {
+        "id": "AC-1",
+        "given_ar": "وجود مزادات بحالات مختلفة",
+        "when_ar": "أستعرض صفحة \"إدارة المزادات\" دون تطبيق أي فلاتر",
+        "then_ar": "يظهر ترتيب الحالة بحسب BR-2 ويطبق ترتيب داخل كل حالة كما هو موضح."
+      },
+      {
+        "id": "AC-2",
+        "given_ar": "وجود حقول غير مملوءة في مزادات المسودة",
+        "when_ar": "أستعرض قائمة المسودات",
+        "then_ar": "تعرض الخانات الناقصة كقيم فارغة وفق BR-1."
+      },
+      {
+        "id": "AC-3",
+        "given_ar": "قمت بتعبئة بعض حقول البحث في نموذج الفلاتر",
+        "when_ar": "أضغط \"بحث\"",
+        "then_ar": "تعرض النتائج التي تنطبق عليها المعايير وتظل القيم المختارة محفوظة على النموذج."
+      },
+      {
+        "id": "AC-4",
+        "given_ar": "أتنقل بين تبويب \"المزادات\" وتبويب \"المسودات\"",
+        "when_ar": "أقوم بالتبديل بين التبويبين",
+        "then_ar": "لا تختلط النتائج، ويحافظ كل تبويب على فلاتره الخاصة (نموذج-001 للمزادات العامة، نموذج-002 للمسودات)."
+      }
+    ]
+  }
+}
